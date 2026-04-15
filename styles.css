@@ -1,0 +1,101 @@
+:root {
+  --paper: #f7f1df;
+  --paper-shadow: #d2c3a5;
+  --ink: #1f3140;
+  --line: #9ebfdf;
+  --accent: #d16f62;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Trebuchet MS", "Verdana", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.75), transparent 35%),
+    linear-gradient(180deg, #efe4c9 0%, #d4c3a6 100%);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.game-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(94vw, 520px);
+  padding: 18px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.22)),
+    linear-gradient(180deg, #e2d4b8, #c8b18b);
+  box-shadow:
+    0 28px 70px rgba(61, 43, 18, 0.24),
+    inset 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+#game-canvas {
+  display: block;
+  width: min(100%, 400px);
+  height: auto;
+  border: 5px solid rgba(31, 49, 64, 0.95);
+  border-radius: 22px;
+  background: var(--paper);
+  box-shadow:
+    0 16px 28px rgba(31, 49, 64, 0.18),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.75);
+}
+
+.game-frame:fullscreen {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 24px;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.45), transparent 30%),
+    linear-gradient(180deg, #efe4c9 0%, #d4c3a6 100%);
+}
+
+.game-frame:fullscreen #game-canvas {
+  width: min(calc(100vh * 0.6667), 100vw);
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+noscript {
+  position: fixed;
+  inset: auto 16px 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(31, 49, 64, 0.92);
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    padding: 12px;
+  }
+
+  .game-frame {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  #game-canvas {
+    border-width: 4px;
+    border-radius: 18px;
+  }
+}
