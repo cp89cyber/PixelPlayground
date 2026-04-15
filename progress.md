@@ -16,6 +16,8 @@ Original prompt: make a static doodle jump clone
 - Verified restart behavior in the same page session: final state returned to `playing` with a fresh run and preserved best score.
 - Verified `localStorage` persistence across reload in a persistent Playwright browser context. The stored key and reloaded menu both reflected the saved best score.
 - Observed no console-error artifacts during the automated runs.
+- Retuned bounce physics to `GRAVITY = -1650` and `JUMP_VELOCITY = 805` to slow airtime while preserving jump height.
+- Re-verified the bounce update with the Playwright client plus a deterministic Playwright probe: the first auto-bounce still triggers immediately, opening platforms remain reachable, wraparound still occurs during play, a forced miss still reaches game-over, restart returns to `playing` with the camera reset, and no new console errors appeared.
 
 ## Notes
 

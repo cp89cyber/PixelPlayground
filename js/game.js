@@ -23,8 +23,8 @@
   const PLAYER_ACCELERATION = 2400;
   const PLAYER_DRAG = 1900;
   const PLAYER_MAX_SPEED = 285;
-  const GRAVITY = -2200;
-  const JUMP_VELOCITY = 930;
+  const GRAVITY = -1650;
+  const JUMP_VELOCITY = 805;
   const CAMERA_FOLLOW_Y = 220;
   const LOSS_BUFFER = 150;
   const SCORE_UNIT = 18;
